@@ -1,30 +1,20 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-    <script src="Js/script.js"></script>
-    <link rel="stylesheet" href="/static/style.css">
-    <script src="https://kit.fontawesome.com/baffd7df9a.js" crossorigin="anonymous"></script>
-</head>
-<body>
-<div class="side-menu">
-    <div class="side-menu-items">
-        <h1>CerebroScan</h1>
-        <ul>
-            <li><i class="fa-solid fa-house"></i>Dashboard</li>
-            <li><i class="fa-solid fa-brain"></i>Model</li>
-            <li><i class="fa-solid fa-question"></i>Support</li>
-        </ul>
-    </div>
-</div>
-<div class="main-content">
-    <div class="header">
-        <div class="header-icon"><i class="fa-solid fa-user"></i></div>
-        <div class="header-icon"><i class="fa-solid fa-gear"></i></div>
-    </div>
-    <div class="upload"></div>
-    <div class="previous"></div>
-</div>
-</body>
+    <head>
+        <title>Tumour Classifier</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <h1 class="text-center">Image Classifier</h1>
+
+        <form class="p-3 text-center" action='/', method="post" enctype="multipart/form-data">
+            <input class="form-control" type="file" name="imagefile" >
+            <input class="btn btn-primary mt-3"type="submit" value="Predict Image" >
+        </form>
+
+        {% if prediction %}
+            <p class="text-center"> Image is a {{prediction}}</p>
+        {% endif %}
+    </body>
 </html>

@@ -4,15 +4,15 @@ app = Flask(__name__)
 
 
 @app.route('/', methods=['GET'])
-def index():
+def hello_word():
     return render_template('index.html')
 
 
 @app.route('/', methods=['POST'])
 def predict():
     imagefile = request.files['imagefile']
-    image_path = "./image/" + imagefile.filename
-
+    image_path = "./images/" + imagefile.filename
+    imagefile.save(image_path)
     return render_template('index.html')
 
 
